@@ -5,11 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.constraints.NotBlank;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class DepartmentDto {
+
+    @NotBlank(message = "code field can NOT be empty")
     public String code;
     public String name;
     public String description;
