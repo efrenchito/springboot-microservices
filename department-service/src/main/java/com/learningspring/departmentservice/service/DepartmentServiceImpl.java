@@ -4,6 +4,7 @@ import com.learningspring.departmentservice.model.dto.DepartmentDto;
 import com.learningspring.departmentservice.model.entity.Department;
 import com.learningspring.departmentservice.repository.DepartmentRepository;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,13 +14,12 @@ import java.util.List;
 public class DepartmentServiceImpl implements DepartmentService {
 
     private final DepartmentRepository departmentRepository;
+
+    private final ModelMapper modelMapper;
+
     @Override
     public Department createDepartment(DepartmentDto departmentDto) {
-        Department department = Department.builder()
-                .code(departmentDto.getCode())
-                .name(departmentDto.getName())
-                .description(departmentDto.getDescription())
-                .build();
+        Department department = modelMapper.map(departmentDto, Department.class);
         return departmentRepository.save(department);
     }
 
