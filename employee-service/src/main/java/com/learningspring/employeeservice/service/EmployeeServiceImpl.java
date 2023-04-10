@@ -4,6 +4,7 @@ import com.learningspring.employeeservice.model.dto.EmployeeDto;
 import com.learningspring.employeeservice.model.entity.Employee;
 import com.learningspring.employeeservice.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,14 +15,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
+    private final ModelMapper modelMapper;
+
 
     @Override
     public Employee createEmployee(EmployeeDto employeeDto) {
-        Employee employee = Employee.builder()
-                .firstName(employeeDto.getFirstName())
-                .lastName(employeeDto.getLastName())
-                .email(employeeDto.getEmail())
-                .build();
+        Employee employee = modelMapper.map(employeeDto, Employee.class);
         return employeeRepository.save(employee);
     }
 
