@@ -51,3 +51,20 @@ Usually we'll require to create a custom response, accordingly to Customer needs
 >- Create GlobalExceptionHandler class and handle global Exceptions in a single place.
 >- Create ResourceNotFoundException and throw it properly
 >- Handle specific ResourceNotFoundException on GlobalExceptionHandler
+
+* *
+
+### Bean Validation
+o We validate a Java Bean with the Standard Framework - JSR 380, also known as Bean Validation 2.0
+o Validating User Input is a Super Common Requirement in most applications. and the Java Bean Validation Framework has become the de facto standard for handling this kind of logic.  
+o JSR 380 is a specification of the Java Bean Validation API and this ensures that the properties of a bean meet specific criteria, using annotations such as @NotNull, @Min, and @Max  
+o Hibernate Validator is the reference implementation of the validation API
+
+
+> ### Lesson05 (Bean Validation)
+> ***
+>✏️ Add Bean Validation
+>- Add org.springframework.boot:spring-boot-starter-validation
+>- Apply desired validation annotations to Dto bean. e.g: @NotNull|@NotBlank|@NotEmpty|@Size|@Min|@Max|@Email
+>- Enable validation on Spring Controller by adding ️@Valid️ @RequestBody annotations
+>- Add handler to 'MethodArgumentNotValidException.class' in GlobalExceptionHandler
