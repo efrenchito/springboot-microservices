@@ -1,5 +1,6 @@
 package com.learningspring.employeeservice.service;
 
+import com.learningspring.employeeservice.exception.ResourceNotFoundException;
 import com.learningspring.employeeservice.model.dto.EmployeeDto;
 import com.learningspring.employeeservice.model.entity.Employee;
 import com.learningspring.employeeservice.repository.EmployeeRepository;
@@ -32,7 +33,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee getEmployeeById(long id) {
         return employeeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException(String.format("Employee with ID '%d' NOT FOUND", id)));
+                .orElseThrow(() -> new ResourceNotFoundException("Employee", "ID", Long.toString(id)));
     }
 
     @Override
