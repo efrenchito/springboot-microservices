@@ -1,5 +1,6 @@
 package com.learningspring.departmentservice.service;
 
+import com.learningspring.departmentservice.exception.ResourceNotFoundException;
 import com.learningspring.departmentservice.model.dto.DepartmentDto;
 import com.learningspring.departmentservice.model.entity.Department;
 import com.learningspring.departmentservice.repository.DepartmentRepository;
@@ -31,7 +32,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public Department getDepartmentByCode(String code) {
         return departmentRepository.findByCode(code)
-                .orElseThrow(() -> new RuntimeException(String.format("Department with code %s NOT FOUND ", code)));
+                .orElseThrow(() -> new ResourceNotFoundException("Department", "code", code));
     }
 
     @Override

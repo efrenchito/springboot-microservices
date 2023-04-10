@@ -42,6 +42,7 @@ Usually we'll require to create a custom response, accordingly to Customer needs
 ### What are the most important annotations for handling Exceptions in the Spring Boot application?
 * @ControllerAdvice - Defines a class to handle Exceptions Globally
 * @ExceptionHandler - Handle specific exceptions and send the custom responses to the client.
+* @ResponseStatus - Spring Boot responds with this HttpStatus whenever this exception is thrown
 
 > ### Lesson04 (Exception Handling)
 > ***
