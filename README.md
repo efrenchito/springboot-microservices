@@ -32,3 +32,21 @@ Mapping libraries simplify the conversion from Entity to DTO, and from DTO to En
 >- Add org.modelmapper:modelmapper dependency
 >- Create new ModelMapper() Bean
 >- mapper.map({Entity}Dto, {Entity}}.class); | mapper.map({Entity}}, {Entity}Dto.class);
+
+* *
+
+### Exception Handling Overview
+When an Exception occurs Spring Boot returns {timestamp|status|error|trace|message|path} as default response.  
+Usually we'll require to create a custom response, accordingly to Customer needs.
+
+### What are the most important annotations for handling Exceptions in the Spring Boot application?
+* @ControllerAdvice - Defines a class to handle Exceptions Globally
+* @ExceptionHandler - Handle specific exceptions and send the custom responses to the client.
+
+> ### Lesson04 (Exception Handling)
+> ***
+>✏️ Create a Global Exception Handler class
+>- Create custom ErrorDetails class to hold the custom error response
+>- Create GlobalExceptionHandler class and handle global Exceptions in a single place.
+>- Create ResourceNotFoundException and throw it properly
+>- Handle specific ResourceNotFoundException on GlobalExceptionHandler
