@@ -20,3 +20,15 @@
 >- Create EmployeeDto
 >- Create EmployeeService
 >- Create EmployeeController
+
+* *
+
+### Why Mapping Libraries are important?
+Mapping libraries simplify the conversion from Entity to DTO, and from DTO to Entity in a Spring Boot REST API instead of writing these conversions by hand.
+
+> ### Lesson03 (Mapping Libraries)
+> ***
+>✏️ Use ModelMapper/MapStruct Mapping Libraries to convert the JPA entity to its Dto and Vice Versa.
+>- Add org.modelmapper:modelmapper dependency
+>- Create new ModelMapper() Bean
+>- mapper.map({Entity}Dto, {Entity}}.class); | mapper.map({Entity}}, {Entity}Dto.class);
