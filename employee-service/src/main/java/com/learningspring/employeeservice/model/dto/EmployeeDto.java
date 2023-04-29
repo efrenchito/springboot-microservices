@@ -20,4 +20,5 @@ public class EmployeeDto {
     @NotEmpty(message = "email can NOT be empty")
     @Email(message = "email should have a valid format")
     private String email;
+    private String departmentCode;
 }

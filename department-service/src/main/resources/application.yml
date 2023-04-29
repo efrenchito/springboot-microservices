@@ -14,4 +14,12 @@ spring:
     url:  jdbc:mysql://localhost:3307/department_db?useSSL=false&allowPublicKeyRetrieval=true
     username: ediaz
     password: ediaz
+  application:
+    name: DEPARTMENT-SERVICE
+
+eureka:
+  instance:
+    client:
+      serverUrl:
+        defaultZone: http://localhost:8761/eureka
 

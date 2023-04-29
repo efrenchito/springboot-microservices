@@ -1,5 +1,6 @@
 package com.learningspring.employeeservice.controller;
 
+import com.learningspring.employeeservice.model.dto.EmployeeDepartmentDto;
 import com.learningspring.employeeservice.model.dto.EmployeeDto;
 import com.learningspring.employeeservice.model.entity.Employee;
 import com.learningspring.employeeservice.service.EmployeeService;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import javax.ws.rs.Path;
 import java.util.List;
 
 @RestController
@@ -32,6 +34,21 @@ public class EmployeeController {
     @GetMapping("/{id}")
     public ResponseEntity<Employee> getEmployeeById(@PathVariable long id) {
         return ResponseEntity.ok(employeeService.getEmployeeById(id));
+    }
+
+    @GetMapping("/rest-template/{id}")
+    public ResponseEntity<EmployeeDepartmentDto> getEmployeeByIdRestTemplate(@PathVariable long id) {
+        return ResponseEntity.ok(employeeService.getEmployeeByIdRestTemplate(id));
+    }
+
+    @GetMapping("/web-client/{id}")
+    public ResponseEntity<EmployeeDepartmentDto> getEmployeeByIdWebClient(@PathVariable long id) {
+        return ResponseEntity.ok(employeeService.getEmployeeByIdWebClient(id));
+    }
+
+    @GetMapping("/open-feign/{id}")
+    public ResponseEntity<EmployeeDepartmentDto> getEmployeeByIdOpenFeign(@PathVariable long id) {
+        return ResponseEntity.ok(employeeService.getEmployeeByIdOpenFeign(id));
     }
 
     @PutMapping("/{id}")

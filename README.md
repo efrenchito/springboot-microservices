@@ -68,3 +68,10 @@ o Hibernate Validator is the reference implementation of the validation API
 >- Apply desired validation annotations to Dto bean. e.g: @NotNull|@NotBlank|@NotEmpty|@Size|@Min|@Max|@Email
 >- Enable validation on Spring Controller by adding ️@Valid️ @RequestBody annotations
 >- Add handler to 'MethodArgumentNotValidException.class' in GlobalExceptionHandler
+>
+* *
+
+## Section 2
+> ### Lesson01 
+> ***
+>- Cr
