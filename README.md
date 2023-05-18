@@ -68,3 +68,18 @@ o Hibernate Validator is the reference implementation of the validation API
 >- Apply desired validation annotations to Dto bean. e.g: @NotNull|@NotBlank|@NotEmpty|@Size|@Min|@Max|@Email
 >- Enable validation on Spring Controller by adding ️@Valid️ @RequestBody annotations
 >- Add handler to 'MethodArgumentNotValidException.class' in GlobalExceptionHandler
+> ***
+ 
+### Open API ( Swagger )
+
+Defines a standard __language-agnostic__ interface to HTTP APIs which allow to discover and understand the capabilities 
+of a service without access to the source code
+
+> ### Lesson06 ( Open API Swagger )
+> ***
+> ✏️ Add OpenAPI Swagger
+> - Add io.springfox:springfox-boot-starter
+> - Open in your browser http://localhost:8181/v3/api-docs
+> - Open in your browser http://localhost:8181/swagger-ui/
+> - Add configuration
+> ***
