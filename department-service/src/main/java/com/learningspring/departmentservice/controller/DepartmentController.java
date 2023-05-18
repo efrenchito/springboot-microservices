@@ -3,6 +3,8 @@ package com.learningspring.departmentservice.controller;
 import com.learningspring.departmentservice.model.dto.DepartmentDto;
 import com.learningspring.departmentservice.model.entity.Department;
 import com.learningspring.departmentservice.service.DepartmentService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-
+@Api(value = "Expose API for department")
 @RestController
 @RequestMapping("/api/department")
 @RequiredArgsConstructor
@@ -18,6 +20,7 @@ public class DepartmentController {
 
     private final DepartmentService departmentService;
 
+    @ApiOperation(value = "Create a department")
     @PostMapping
     public ResponseEntity<Department> createDepartment(@Valid @RequestBody DepartmentDto departmentDto) {
         Department savedDepartment = departmentService.createDepartment(departmentDto);
