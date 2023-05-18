@@ -1,6 +1,5 @@
 package com.learningspring.employeeservice.controller;
 
-import com.learningspring.employeeservice.model.dto.EmployeeDepartmentDto;
 import com.learningspring.employeeservice.model.dto.EmployeeDto;
 import com.learningspring.employeeservice.model.entity.Employee;
 import com.learningspring.employeeservice.service.EmployeeService;
@@ -10,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.ws.rs.Path;
 import java.util.List;
 
 @RestController
