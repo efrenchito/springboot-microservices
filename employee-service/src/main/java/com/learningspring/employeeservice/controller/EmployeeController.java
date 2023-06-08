@@ -1,9 +1,12 @@
 package com.learningspring.employeeservice.controller;
 
+import com.learningspring.employeeservice.model.dto.EmployeeDepartmentDto;
 import com.learningspring.employeeservice.model.dto.EmployeeDto;
 import com.learningspring.employeeservice.model.entity.Employee;
 import com.learningspring.employeeservice.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@RefreshScope
 @RestController
 @RequestMapping("/api/employee")
 @RequiredArgsConstructor
@@ -18,6 +22,13 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
+    @Value("${message:Hello default}")
+    private String message;
+
+    @GetMapping("/hello")
+    public String hello() {
+        return message;
+    }
     @PostMapping
     public ResponseEntity<Employee> createEmployee(@Valid @RequestBody EmployeeDto employeeDto) {
         Employee employee = employeeService.createEmployee(employeeDto);
