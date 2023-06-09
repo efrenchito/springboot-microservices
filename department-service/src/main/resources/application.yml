@@ -5,7 +5,19 @@ spring:
   config:
     import: optional:configserver:http://localhost:8888
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 logging:
   level:
     ROOT: INFO
     org.springframework.cloud.config: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
